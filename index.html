@@ -3,7 +3,6 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport"content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width">
-		<meta name="theme-color"content="#eee">
 		<link rel="icon"href="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
 		<title>⚓</title>
 		<style>
@@ -35,7 +34,7 @@
 			}
 			:root{
 				--bg:#eee;
-				--fg:#222;
+				--fg:#333;
 				--big:1.5em;
 				--rad:.5em;
 				background-color:var(--bg);
@@ -58,7 +57,7 @@
 			article{
 				font-size:larger;
 				line-height:150%;
-				margin:6rem auto 6rem auto;
+				margin:0 auto 5rem auto;
 				max-width:80ch;
 				padding:1em;
 				text-align:left;
@@ -67,13 +66,13 @@
 				margin:0;
 			}
 			footer{
-				background-color:var(--fg);
-				border-radius:var(--rad);
+				background-color:var(--bg);
+				border-radius:var(--big);
 				bottom:2em;
-				color:var(--bg);
+				box-shadow:0 0 var(--rad) var(--rad) var(--bg);
 				display:flex;
 				min-height:3em;
-			}footer,#book{
+			}footer{
 				position:fixed;
 				left:50%;
 				transform:translateX(-50%);
@@ -85,10 +84,8 @@
 			}
 			select{
 				appearance:none;
-				background-color:var(--fg);
 				border:none;
 				border-radius:var(--rad);
-				color:var(--bg);
 				cursor:pointer;
 				font-family:'Head',sans-serif;
 				font-size:inherit;
@@ -124,8 +121,7 @@
 			}
 			#book{
 				font-size:var(--big);
-				padding-bottom:.5em;
-				top:1em;
+				padding-top:var(--big);
 			}
 			#chap{
 				font-size:1rem;
@@ -253,8 +249,7 @@
 			</footer>
 			<article></article>
 		</main>
-		<script>
-			'use strict';
+		<script type="module">
 			const art=document.getElementsByTagName('article')[0];
 			const book=document.getElementById('book');
 			const chap=document.getElementById('chap');
@@ -337,7 +332,6 @@
 			}
 			brown();
 			go();
-			alert("NET Bible®\nCopyright ©1996, 2019 Biblical Studies Press, L.L.C.\nAll rights reserved");
 		</script>
 	</body>
 </html>
