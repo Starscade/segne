@@ -101,6 +101,16 @@
 				transform: translateX(-50%);
 			}
 
+			option {
+				background: inherit;
+				color: inherit;
+			}
+
+			option:checked {
+				background: var(--fg);
+				color: var(--bg);
+			}
+
 			p {
 				margin: 0;
 			}
@@ -111,8 +121,10 @@
 
 			select {
 				appearance: none;
+				background: var(--bg);
 				border: none;
 				border-radius: var(--rad);
+				color: inherit;
 				cursor: pointer;
 				font-family: 'Head', sans-serif;
 				font-size: inherit;
@@ -197,6 +209,13 @@
 			@media (min-width: 480px) {
 				article {
 					text-align: justify;
+				}
+			}
+
+			@media (prefers-color-scheme: dark) {
+				:root {
+					--bg: Black;
+					--fg: #edc;
 				}
 			}
 
