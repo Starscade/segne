@@ -1,337 +1,458 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport"content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width">
-		<link rel="icon"href="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+		<meta charset="UTF-8">
+		<meta
+			name="viewport"
+			content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width"
+		>
+		<link
+			rel="icon"
+			href="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+		>
 		<title>⚓</title>
 		<style>
-			@font-face{
-				font-family:'Head';
-				src:url('https://fonts.gstatic.com/s/oswald/v49/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUZiZQ.woff2');
+			@font-face {
+				font-family: 'Head';
+				src: url('https://fonts.gstatic.com/s/oswald/v49/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUZiZQ.woff2');
 			}
-			@font-face{
-				font-family:'Tail';
-				src:url('https://fonts.gstatic.com/s/quicksand/v30/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o58a-wg.woff2');
+
+			@font-face {
+				font-family: 'Tail';
+				src: url('https://fonts.gstatic.com/s/quicksand/v30/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o58a-wg.woff2');
 			}
-			@keyframes spin{
-				to{
-					rotate:1 -1 1 359deg;
+
+			@keyframes spin {
+				to {
+					rotate: 1 -1 1 359deg;
 				}
 			}
-			::-webkit-scrollbar{
-				width:1em;
-			}::-webkit-scrollbar-track{
-				background-color:transparent;
-			}::-webkit-scrollbar-thumb{
-				background-color:currentColor;
-				border:.3em solid var(--bg);
-				border-radius:var(--rad);
+
+			::-webkit-scrollbar {
+				width: 1em;
 			}
-			::selection{
-				background-color:var(--fg);
-				color:var(--bg);
+
+			::-webkit-scrollbar-track {
+				background-color: transparent;
 			}
-			:root{
-				--bg:#eee;
-				--fg:#333;
-				--big:1.5em;
-				--rad:.5em;
-				background-color:var(--bg);
-				color:var(--fg);
-				font-family:'Tail',sans-serif;
-				font-size:14pt;
-				overflow-y:scroll;
-				scrollbar-color:var(--fg) var(--bg);
-				scrollbar-width:thin;
-				text-align:center;
+
+			::-webkit-scrollbar-thumb {
+				background-color: currentColor;
+				border: 0.3em solid var(--bg);
+				border-radius: var(--rad);
 			}
-			a{
-				color:currentColor;
-				font-weight:bold;
-				outline:none;
-				text-decoration:none;
-			}a:focus,a:hover{
-				text-decoration:underline;
+
+			::selection {
+				background-color: var(--fg);
+				color: var(--bg);
 			}
-			article{
-				font-size:larger;
-				line-height:150%;
-				margin:0 auto 5rem auto;
-				max-width:80ch;
-				padding:1em;
-				text-align:left;
+
+			:root {
+				--bg: #eee;
+				--fg: #333;
+				--big: 1.5em;
+				--rad: 0.5em;
+				background-color: var(--bg);
+				color: var(--fg);
+				font-family: 'Tail', sans-serif;
+				font-size: 14pt;
+				overflow-y: scroll;
+				scrollbar-color: var(--fg) var(--bg);
+				scrollbar-width: thin;
+				text-align: center;
 			}
-			body{
-				margin:0;
+
+			a {
+				color: currentColor;
+				font-weight: bold;
+				outline: none;
+				text-decoration: none;
 			}
-			footer{
-				background-color:var(--bg);
-				border-radius:var(--big);
-				bottom:2em;
-				box-shadow:0 0 var(--rad) var(--rad) var(--bg);
-				display:flex;
-				min-height:3em;
-			}footer{
-				position:fixed;
-				left:50%;
-				transform:translateX(-50%);
+
+			a:focus, a:hover {
+				text-decoration: underline;
 			}
-			p{
-				margin:0;
-			}p:not(:first-of-type){
-				text-indent:2em;
+
+			article {
+				font-size: larger;
+				line-height: 150%;
+				margin: 0 auto 5rem auto;
+				max-width: 80ch;
+				padding: 1em;
+				text-align: left;
 			}
-			select{
-				appearance:none;
-				border:none;
-				border-radius:var(--rad);
-				cursor:pointer;
-				font-family:'Head',sans-serif;
-				font-size:inherit;
-				font-weight:bold;
-				letter-spacing:2pt;
-				min-width:4em;
-				outline:none;
-				padding:.67rem;
-				text-align:center;
-				text-transform:uppercase;
-			}select::-webkit-scrollbar-thumb{
-				border-color:var(--fg);
+
+			body {
+				margin: 0;
 			}
-			small{
-				font-size:normal;
-				text-transform:uppercase;
+
+			footer {
+				background-color: var(--bg);
+				border-radius: var(--big);
+				bottom: 2em;
+				box-shadow: 0 0 var(--rad) var(--rad) var(--bg);
+				display: flex;
+				min-height: 3em;
 			}
-			sup{
-				font-size:small;
-				font-weight:bold;
-				margin-right:2pt;
-				user-select:none;
-			}p:first-of-type>sup:first-of-type{
-				display:none;
-			}svg{
-				cursor:pointer;
-				fill:currentColor;
-				width:2em;
-			}svg:first-of-type{
-				padding-left:.5em;
-			}svg:last-of-type{
-				padding-right:.5em;
+
+			footer {
+				position: fixed;
+				left: 50%;
+				transform: translateX(-50%);
 			}
-			#book{
-				font-size:var(--big);
-				padding-top:var(--big);
+
+			p {
+				margin: 0;
 			}
-			#chap{
-				font-size:1rem;
+
+			p:not(:first-of-type) {
+				text-indent: 2em;
 			}
-			#lod{
-				height:3em;
-				left:50%;
-				position:fixed;
-				top:50%;
-				transform:translate(-50%,-50%);
-				width:3em;
-			}#lod>svg{
-				animation:spin 1s linear infinite;
-				height:3em;
-				width:3em;
+
+			select {
+				appearance: none;
+				border: none;
+				border-radius: var(--rad);
+				cursor: pointer;
+				font-family: 'Head', sans-serif;
+				font-size: inherit;
+				font-weight: bold;
+				letter-spacing: 2pt;
+				min-width: 4em;
+				outline: none;
+				padding: 0.67rem;
+				text-align: center;
+				text-transform: uppercase;
 			}
-			@media(min-width:480px){
-				article{
-					text-align:justify;
+
+			select::-webkit-scrollbar-thumb {
+				border-color: var(--fg);
+			}
+
+			small {
+				font-size: normal;
+				text-transform: uppercase;
+			}
+
+			sup {
+				font-size: small;
+				font-weight: bold;
+				margin-right: 2pt;
+				user-select: none;
+			}
+
+			p:first-of-type > sup:first-of-type {
+				display: none;
+			}
+
+			svg {
+				cursor: pointer;
+				fill: currentColor;
+				width: 2em;
+			}
+
+			svg:first-of-type {
+				padding-left: 0.5em;
+			}
+
+			svg:last-of-type {
+				padding-right: 0.5em;
+			}
+
+			#book {
+				font-size: var(--big);
+				padding-top: var(--big);
+			}
+
+			#chap {
+				font-size: 1rem;
+			}
+
+			#lod {
+				height: 3em;
+				left: 50%;
+				position: fixed;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				width: 3em;
+			}
+
+			#lod > svg {
+				animation: spin 1s linear infinite;
+				height: 3em;
+				width: 3em;
+			}
+
+			@media (min-width: 480px) {
+				article {
+					text-align: justify;
 				}
 			}
-			@media(max-height:480px){
-				article{
-					margin:0;
-					padding:0 1em;
+
+			@media (max-height: 480px) {
+				article {
+					margin: 0;
+					padding: 0 1em;
 				}
-				footer,#book{
-					display:none;
-				}
-			}
-			@media print{
-				:root{
-					--bg:White;
-					--fg:Black;
-				}
-				a{
-					font-weight:normal;
-					text-decoration:none!important;
-				}
-				article{
-					margin:auto;
-					text-align:justify;
-				}
-				footer,#book{
-					display:none;
+
+				footer, #book {
+					display: none;
 				}
 			}
-			@page{
-				margin:1in;
+
+			@media print {
+				:root {
+					--bg: White;
+					--fg: Black;
+				}
+
+				a {
+					font-weight: normal;
+					text-decoration: none !important;
+				}
+
+				article {
+					margin: auto;
+					text-align: justify;
+				}
+
+				footer, #book {
+					display: none;
+				}
+			}
+
+			@page {
+				margin: 1in;
 			}
 		</style>
 	</head>
 	<body>
 		<main>
 			<select id="book">
-				<option data-ch="50"value="Genesis">Genesis</option>
-				<option data-ch="40"value="Exodus">Exodus</option>
-				<option data-ch="27"value="Leviticus">Leviticus</option>
-				<option data-ch="36"value="Numbers">Numbers</option>
-				<option data-ch="34"value="Deuteronomy">Deuteronomy</option>
-				<option data-ch="24"value="Joshua">Joshua</option>
-				<option data-ch="21"value="Judges">Judges</option>
-				<option data-ch="4"value="Ruth">Ruth</option>
-				<option data-ch="31"value="1+Samuel">1 Samuel</option>
-				<option data-ch="24"value="2+Samuel">2 Samuel</option>
-				<option data-ch="22"value="1+Kings">1 Kings</option>
-				<option data-ch="25"value="2+Kings">2 Kings</option>
-				<option data-ch="29"value="1+Chronicles">1 Chronicles</option>
-				<option data-ch="36"value="2+Chronicles">2 Chronicles</option>
-				<option data-ch="10"value="Ezra">Ezra</option>
-				<option data-ch="13"value="Nehemiah">Nehemiah</option>
-				<option data-ch="10"value="Esther">Esther</option>
-				<option data-ch="42"value="Job">Job</option>
-				<option data-ch="150"value="Psalms">Psalms</option>
-				<option data-ch="31"value="Proverbs">Proverbs</option>
-				<option data-ch="12"value="Ecclesiastes">Ecclesiastes</option>
-				<option data-ch="8"value="Song+of+Songs">Song of Songs</option>
-				<option data-ch="66"value="Isaiah">Isaiah</option>
-				<option data-ch="52"value="Jeremiah">Jeremiah</option>
-				<option data-ch="5"value="Lamentations">Lamentations</option>
-				<option data-ch="48"value="Ezekiel">Ezekiel</option>
-				<option data-ch="12"value="Daniel">Daniel</option>
-				<option data-ch="14"value="Hosea">Hosea</option>
-				<option data-ch="3"value="Joel">Joel</option>
-				<option data-ch="9"value="Amos">Amos</option>
-				<option data-ch="1"value="Obadiah">Obadiah</option>
-				<option data-ch="4"value="Jonah">Jonah</option>
-				<option data-ch="7"value="Micah">Micah</option>
-				<option data-ch="3"value="Nahum">Nahum</option>
-				<option data-ch="3"value="Habakkuk">Habakkuk</option>
-				<option data-ch="3"value="Zephaniah">Zephaniah</option>
-				<option data-ch="2"value="Haggai">Haggai</option>
-				<option data-ch="14"value="Zechariah">Zechariah</option>
-				<option data-ch="4"value="Malachi">Malachi</option>
-				<option data-ch="28"value="Matthew">Matthew</option>
-				<option data-ch="16"value="Mark"selected>Mark</option>
-				<option data-ch="24"value="Luke">Luke</option>
-				<option data-ch="21"value="John">John</option>
-				<option data-ch="28"value="Acts">Acts</option>
-				<option data-ch="16"value="Romans">Romans</option>
-				<option data-ch="16"value="1+Corinthians">1 Corinthians</option>
-				<option data-ch="13"value="2+Corinthians">2 Corinthians</option>
-				<option data-ch="6"value="Galatians">Galatians</option>
-				<option data-ch="6"value="Ephesians">Ephesians</option>
-				<option data-ch="4"value="Philippians">Philippians</option>
-				<option data-ch="4"value="Colossians">Colossians</option>
-				<option data-ch="5"value="1+Thessalonians">1 Thessalonians</option>
-				<option data-ch="3"value="2+Thessalonians">2 Thessalonians</option>
-				<option data-ch="6"value="1+Timothy">1 Timothy</option>
-				<option data-ch="4"value="2+Timothy">2 Timothy</option>
-				<option data-ch="3"value="Titus">Titus</option>
-				<option data-ch="1"value="Philemon">Philemon</option>
-				<option data-ch="13"value="Hebrews">Hebrews</option>
-				<option data-ch="5"value="James">James</option>
-				<option data-ch="5"value="1+Peter">1 Peter</option>
-				<option data-ch="3"value="2+Peter">2 Peter</option>
-				<option data-ch="5"value="1+John">1 John</option>
-				<option data-ch="1"value="2+John">2 John</option>
-				<option data-ch="1"value="3+John">3 John</option>
-				<option data-ch="1"value="Jude">Jude</option>
-				<option data-ch="22"value="Revelation">Revelation</option>
+				<option data-ch="50" value="Genesis">Genesis</option>
+				<option data-ch="40" value="Exodus">Exodus</option>
+				<option data-ch="27" value="Leviticus">Leviticus</option>
+				<option data-ch="36" value="Numbers">Numbers</option>
+				<option data-ch="34" value="Deuteronomy">Deuteronomy</option>
+				<option data-ch="24" value="Joshua">Joshua</option>
+				<option data-ch="21" value="Judges">Judges</option>
+				<option data-ch="4" value="Ruth">Ruth</option>
+				<option data-ch="31" value="1+Samuel">1 Samuel</option>
+				<option data-ch="24" value="2+Samuel">2 Samuel</option>
+				<option data-ch="22" value="1+Kings">1 Kings</option>
+				<option data-ch="25" value="2+Kings">2 Kings</option>
+				<option data-ch="29" value="1+Chronicles">1 Chronicles</option>
+				<option data-ch="36" value="2+Chronicles">2 Chronicles</option>
+				<option data-ch="10" value="Ezra">Ezra</option>
+				<option data-ch="13" value="Nehemiah">Nehemiah</option>
+				<option data-ch="10" value="Esther">Esther</option>
+				<option data-ch="42" value="Job">Job</option>
+				<option data-ch="150" value="Psalms">Psalms</option>
+				<option data-ch="31" value="Proverbs">Proverbs</option>
+				<option data-ch="12" value="Ecclesiastes">Ecclesiastes</option>
+				<option data-ch="8" value="Song+of+Songs">Song of Songs</option>
+				<option data-ch="66" value="Isaiah">Isaiah</option>
+				<option data-ch="52" value="Jeremiah">Jeremiah</option>
+				<option data-ch="5" value="Lamentations">Lamentations</option>
+				<option data-ch="48" value="Ezekiel">Ezekiel</option>
+				<option data-ch="12" value="Daniel">Daniel</option>
+				<option data-ch="14" value="Hosea">Hosea</option>
+				<option data-ch="3" value="Joel">Joel</option>
+				<option data-ch="9" value="Amos">Amos</option>
+				<option data-ch="1" value="Obadiah">Obadiah</option>
+				<option data-ch="4" value="Jonah">Jonah</option>
+				<option data-ch="7" value="Micah">Micah</option>
+				<option data-ch="3" value="Nahum">Nahum</option>
+				<option data-ch="3" value="Habakkuk">Habakkuk</option>
+				<option data-ch="3" value="Zephaniah">Zephaniah</option>
+				<option data-ch="2" value="Haggai">Haggai</option>
+				<option data-ch="14" value="Zechariah">Zechariah</option>
+				<option data-ch="4" value="Malachi">Malachi</option>
+				<option data-ch="28" value="Matthew">Matthew</option>
+				<option data-ch="16" value="Mark" selected>Mark</option>
+				<option data-ch="24" value="Luke">Luke</option>
+				<option data-ch="21" value="John">John</option>
+				<option data-ch="28" value="Acts">Acts</option>
+				<option data-ch="16" value="Romans">Romans</option>
+				<option data-ch="16" value="1+Corinthians">1 Corinthians</option>
+				<option data-ch="13" value="2+Corinthians">2 Corinthians</option>
+				<option data-ch="6" value="Galatians">Galatians</option>
+				<option data-ch="6" value="Ephesians">Ephesians</option>
+				<option data-ch="4" value="Philippians">Philippians</option>
+				<option data-ch="4" value="Colossians">Colossians</option>
+				<option data-ch="5" value="1+Thessalonians">1 Thessalonians</option>
+				<option data-ch="3" value="2+Thessalonians">2 Thessalonians</option>
+				<option data-ch="6" value="1+Timothy">1 Timothy</option>
+				<option data-ch="4" value="2+Timothy">2 Timothy</option>
+				<option data-ch="3" value="Titus">Titus</option>
+				<option data-ch="1" value="Philemon">Philemon</option>
+				<option data-ch="13" value="Hebrews">Hebrews</option>
+				<option data-ch="5" value="James">James</option>
+				<option data-ch="5" value="1+Peter">1 Peter</option>
+				<option data-ch="3" value="2+Peter">2 Peter</option>
+				<option data-ch="5" value="1+John">1 John</option>
+				<option data-ch="1" value="2+John">2 John</option>
+				<option data-ch="1" value="3+John">3 John</option>
+				<option data-ch="1" value="Jude">Jude</option>
+				<option data-ch="22" value="Revelation">Revelation</option>
 			</select>
 			<footer>
-				<svg onclick="turn(false)"viewBox="0 0 24 24"xmlns="http://www.w3.org/2000/svg"><path d="M15 17.898c0 1.074-1.265 1.648-2.073.941l-6.31-5.522a1.75 1.75 0 0 1 0-2.634l6.31-5.522c.808-.707 2.073-.133 2.073.941v11.796Z"/></svg><select id="chap"><option value="1">1</option></select><svg onclick="turn()"viewBox="0 0 24 24"xmlns="http://www.w3.org/2000/svg"><path d="M9 17.898c0 1.074 1.265 1.648 2.073.941l6.31-5.522a1.75 1.75 0 0 0 0-2.634l-6.31-5.522C10.265 4.454 9 5.028 9 6.102v11.796Z"/></svg>
+				<svg
+					onclick="turn(false)"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M15 17.898c0 1.074-1.265 1.648-2.073.941l-6.31-5.522a1.75 1.75 0 0 1 0-2.634l6.31-5.522c.808-.707 2.073-.133 2.073.941v11.796Z"
+					/>
+				</svg>
+				<select id="chap"><option value="1">1</option></select>
+				<svg
+					onclick="turn()"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M9 17.898c0 1.074 1.265 1.648 2.073.941l6.31-5.522a1.75 1.75 0 0 0 0-2.634l-6.31-5.522C10.265 4.454 9 5.028 9 6.102v11.796Z"
+					/>
+				</svg>
 			</footer>
 			<article></article>
 		</main>
 		<script type="module">
-			const art=document.getElementsByTagName('article')[0];
-			const book=document.getElementById('book');
-			const chap=document.getElementById('chap');
-			let B="Mark";
-			let C=1;
-			function brown(){
-				if(location.hash){
-					const p=decodeURI(location.hash.replace('#','')).split('+');
-					if(p[2]){
-						if(p[2]==='Songs'){
-							B=p[0]+'+'+p[1]+'+'+p[2];
-							if(p[3])C=p[3];
-						}else{
-							B=p[0]+'+'+p[1];
-							C=p[2];
+			const art = document.getElementsByTagName('article')[0]
+			const book = document.getElementById('book')
+			const chap = document.getElementById('chap')
+
+			let B = 'Mark'
+			let C = 1
+
+			book.onchange = () => {
+				B = book.value
+				C = 1
+				location.hash = B + '+' + C
+			}
+
+			chap.onchange = () => {
+				C = chap.value
+				location.hash = B + '+' + C
+			}
+
+			window.onhashchange = () => {
+				brown()
+				go()
+			}
+
+			brown()
+			go()
+
+
+			// FUNCTIONS
+
+			function brown() {
+				if (location.hash) {
+					const p = decodeURI(location.hash.replace('#', '')).split('+')
+					if (p[2]) {
+						if (p[2] === 'Songs') {
+							B = p[0] + '+' + p[1] + '+' + p[2]
+							if (p[3]) C = p[3]
+						} else {
+							B = p[0] + '+' + p[1]
+							C = p[2]
 						}
-					}else{
-						B=p[0];
-						if(p[1]){
-							C=p[1];
+					} else {
+						B = p[0]
+						if (p[1]) {
+							C = p[1]
 						}
 					}
 				}
-				let BAP="Book: "+B.replaceAll('+',' ')+"\nChap: "+C;
-				console.log(BAP);
+				let BAP = 'Book: ' + B.replaceAll('+', ' ') + '\nChap: ' + C
+				console.log(BAP)
 			}
-			function go(){
-				art.innerHTML='<div id="lod"><svg viewBox="0 0 24 24"xmlns="http://www.w3.org/2000/svg"><path d="M11.724 7.447a2.276 2.276 0 1 0 0 4.553 2.276 2.276 0 0 0 0-4.553ZM4 4.5A2.5 2.5 0 0 1 6.5 2H18a2.5 2.5 0 0 1 2.5 2.5v14.25a.75.75 0 0 1-.75.75H5.5a1 1 0 0 0 1 1h13.25a.75.75 0 0 1 0 1.5H6.5A2.5 2.5 0 0 1 4 19.5v-15Zm10.819 7.295a3.724 3.724 0 1 0-1.024 1.024l2.476 2.475.067.058.008.006a.724.724 0 0 0 .942-1.093l-2.47-2.47Z"/></svg></div>';
-				fetch('https://labs.bible.org/api/?passage='+B+' '+C+'&formatting=full',{
-				method:'GET'
-				}).then(
-					resp=>resp.text()
+
+			function go() {
+				art.innerHTML =
+					'<div id="lod"><svg viewBox="0 0 24 24"xmlns="http://www.w3.org/2000/svg"><path d="M11.724 7.447a2.276 2.276 0 1 0 0 4.553 2.276 2.276 0 0 0 0-4.553ZM4 4.5A2.5 2.5 0 0 1 6.5 2H18a2.5 2.5 0 0 1 2.5 2.5v14.25a.75.75 0 0 1-.75.75H5.5a1 1 0 0 0 1 1h13.25a.75.75 0 0 1 0 1.5H6.5A2.5 2.5 0 0 1 4 19.5v-15Zm10.819 7.295a3.724 3.724 0 1 0-1.024 1.024l2.476 2.475.067.058.008.006a.724.724 0 0 0 .942-1.093l-2.47-2.47Z"/></svg></div>'
+				fetch(
+					'https://labs.bible.org/api/?passage=' + B + ' ' + C +
+						'&formatting=full',
+					{
+						method: 'GET',
+					},
 				).then(
-					resp=>{
-						const lex='https://biblehub.com/';
-						art.innerHTML=resp.replaceAll('class=""','').replaceAll(/<n id="\d+" \/>/g,'').replaceAll(/<\/*[bi]>/g,'').replaceAll(/<span class="vref">\d*:*<span class="verseNumber">(\d+)<\/span><\/span> +/g,'<sup id="$1">$1</sup>').replaceAll(/<st/g,'<a').replaceAll(/st>/g,'a>').replaceAll(/<span class="smcaps">(.*?)<\/span>/g,'<small>$1</small>').replaceAll(/data-num="0(\d+) *(\d+)*"/g,'href="'+lex+'hebrew/$1.htm#breadcrumbs"target="_Blank"').replaceAll(/data-num="([^0]\d+) *(\d+)*"/g,'href="'+lex+'greek/$1.htm#breadcrumbs"target="_Blank"').replaceAll(/(!*\?*’*”*\)*)<\/a>/g,'</a>$1').replaceAll(/\(\d+:\d+\)/g,'');
-						chap.innerHTML="";
-						for(let i=1;i<=document.querySelector('[value="'+B+'"]').getAttribute('data-ch');i++){
-							const ch=document.createElement('option');
-							ch.value=i;
-							ch.innerHTML=i;
-							chap.appendChild(ch);
+					(resp) => resp.text(),
+				).then(
+					(resp) => {
+						const lex = 'https://biblehub.com/'
+						art.innerHTML = resp.replaceAll('class=""', '').replaceAll(
+							/<n id="\d+" \/>/g,
+							'',
+						).replaceAll(/<\/*[bi]>/g, '').replaceAll(
+							/<span class="vref">\d*:*<span class="verseNumber">(\d+)<\/span><\/span> +/g,
+							'<sup id="$1">$1</sup>',
+						).replaceAll(/<st/g, '<a').replaceAll(/st>/g, 'a>')
+							.replaceAll(
+								/<span class="smcaps">(.*?)<\/span>/g,
+								'<small>$1</small>',
+							).replaceAll(
+								/data-num="0(\d+) *(\d+)*"/g,
+								'href="' + lex +
+									'hebrew/$1.htm#breadcrumbs"target="_Blank"',
+							).replaceAll(
+								/data-num="([^0]\d+) *(\d+)*"/g,
+								'href="' + lex +
+									'greek/$1.htm#breadcrumbs"target="_Blank"',
+							).replaceAll(/(!*\?*’*”*\)*)<\/a>/g, '</a>$1').replaceAll(
+								/\(\d+:\d+\)/g,
+								'',
+							)
+						chap.innerHTML = ''
+						for (
+							let i = 1;
+							i <=
+								document.querySelector('[value="' + B + '"]')
+									.getAttribute('data-ch');
+							i++
+						) {
+							const ch = document.createElement('option')
+							ch.value = i
+							ch.innerHTML = i
+							chap.appendChild(ch)
 						}
-						book.value=B;
-						chap.value=C;
-						location.hash=B+'+'+C;
-						window.scrollTo(0,0);
-					}
-				);
+						book.value = B
+						chap.value = C
+						location.hash = B + '+' + C
+						window.scrollTo(0, 0)
+					},
+				)
 			}
-			function turn(z=true){
-				if(z){
-					C++;
-					if(C>=1+Number(document.querySelector('[value="'+B+'"]').getAttribute('data-ch'))){
-						book.selectedIndex++;
-						C=1;
+
+			function turn(z = true) {
+				if (z) {
+					C++
+					if (
+						C >=
+							1 +
+								Number(
+									document.querySelector('[value="' + B + '"]')
+										.getAttribute('data-ch'),
+								)
+					) {
+						book.selectedIndex++
+						C = 1
 					}
-				}else{
-					C--;
-					if(C<=0){
-						book.selectedIndex--;
-						C=document.querySelector('[value="'+book.value+'"]').getAttribute('data-ch');
+				} else {
+					C--
+					if (C <= 0) {
+						book.selectedIndex--
+						C = document.querySelector('[value="' + book.value + '"]')
+							.getAttribute('data-ch')
 					}
 				}
-				B=book.value;
-				location.hash=B+'+'+C;
+				B = book.value
+				location.hash = B + '+' + C
 			}
-			book.onchange=()=>{
-				B=book.value;
-				C=1;
-				location.hash=B+'+'+C;
-			}
-			chap.onchange=()=>{
-				C=chap.value;
-				location.hash=B+'+'+C;
-			}
-			window.onhashchange=()=>{
-				brown();
-				go();
-			}
-			brown();
-			go();
 		</script>
 	</body>
 </html>
