@@ -338,6 +338,7 @@
 			const art = document.getElementsByTagName('article')[0]
 			const book = document.getElementById('book')
 			const chap = document.getElementById('chap')
+			const copyright = 'All text is derived from the NET Bible® API. Visit "https://github.com/Starscade/segne" for more information.'
 
 			let B = 'Genesis'
 			let C = 1
@@ -363,6 +364,8 @@
 
 			brown()
 			go()
+
+			alert(copyright)
 
 			navigator.serviceWorker.register('service-worker.js')
 
