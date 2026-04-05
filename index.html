@@ -459,13 +459,21 @@
 										.getAttribute('data-ch'),
 								)
 					) {
-						book.selectedIndex++
+						if ( book.selectedIndex === 65 ){
+							book.selectedIndex = 0
+						} else {
+							book.selectedIndex++
+						}
 						C = 1
 					}
 				} else {
 					C--
 					if (C <= 0) {
-						book.selectedIndex--
+						if ( book.selectedIndex === 0 ){
+							book.selectedIndex = 65
+						} else {
+							book.selectedIndex--
+						}
 						C = document.querySelector('[value="' + book.value + '"]')
 							.getAttribute('data-ch')
 					}
